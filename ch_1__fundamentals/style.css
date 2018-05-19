@@ -1,0 +1,36 @@
+body {
+    background-color: #333;
+}
+
+.float_right {
+    float: right;
+}
+
+.mr_075 {
+    margin-right: 0.75rem;
+}
+
+.mt_075 {
+    margin-top: 0.75rem;
+}
+
+.mb_075 {
+    margin-bottom: 0.75rem;
+}
+
+.mt_4 {
+    margin-top: 4rem;
+}
+
+.input__field {
+    margin-bottom: 0.25rem; 
+    margin-top: 3rem;
+}
+
+.submit__pos {
+    margin-top: 3rem;
+}
+
+.output__pos {
+    margin-bottom: 1rem;
+}
