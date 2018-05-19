@@ -92,10 +92,20 @@ class UI {
 
     submitInput(callback, ...params) {
         if (this.textArea.disabled) {
-            this.outputField.value = callback(...this.inputField.value.split(','));
+            const args = this.inputField.value;
+            if (args.includes(',')) {
+                this.outputField.value = callback(...args.split(','));
+            } else {
+                this.outputField.value = callback(args);
+            }
         } else {
             const testFunction = new Function(...params, `${this.textArea.value}`);
-            this.outputField.value = testFunction(...this.inputField.value.split(','));
+            const args = this.inputField.value;
+            if (args.includes(',')) {
+                this.outputField.value = testFunction(...this.inputField.value.split(','));
+            } else {
+                this.outputField.value = callback(args);
+            }
         }
     }
 }
