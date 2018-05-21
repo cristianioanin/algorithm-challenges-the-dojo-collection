@@ -104,7 +104,7 @@ class UI {
             if (args.includes(',')) {
                 this.outputField.value = testFunction(...this.inputField.value.split(','));
             } else {
-                this.outputField.value = callback(args);
+                this.outputField.value = testFunction(args);
             }
         }
     }
