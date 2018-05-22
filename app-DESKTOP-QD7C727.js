@@ -100,7 +100,6 @@ class UI {
             }
         } else {
             const testFunction = new Function(...params, `${this.textArea.value}`);
-            
             const args = this.inputField.value;
             if (args.includes(',')) {
                 this.outputField.value = testFunction(...this.inputField.value.split(','));
@@ -176,7 +175,7 @@ DOM.container.addEventListener('click', e => {
         UIContext.editTextArea();
     }
     if (e.target.matches(`#submit-${id}`)) {
-        typeof params[id] === 'object' ? UIContext.submitInput(algos[id], ...params[id]) : UIContext.submitInput(algos[id], params[id]);
+        UIContext.submitInput(algos[id], ...params[id]);
     }
 
 });
@@ -187,7 +186,7 @@ DOM.container.addEventListener('keyup', e => {
     [UIContext, id] = generateNewUIContext(e);
 
     if (e.keyCode === 13 && e.target.matches(`#input-${id}`)) {
-        typeof params[id] === 'object' ? UIContext.submitInput(algos[id], ...params[id]) : UIContext.submitInput(algos[id], params[id]);
+        UIContext.submitInput(algos[id], ...params[id]);
     }
 });
 
