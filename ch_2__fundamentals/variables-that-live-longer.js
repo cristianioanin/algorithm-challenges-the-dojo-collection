@@ -136,3 +136,53 @@ Average of all rolles is: ${average}.`
 
 
 console.log(playStatistics3(2));
+
+
+//  Claire is Where ? On New Year’s Eve, have fun but don’t forget your way home! 
+// For this challenge create four functions ( reset , move By , x Location and y Location ) to track the travels of Claire, a wanderer. 
+// Calling reset() m oves Claire home to the origin (0,0) . 
+// The move By (xOffset ,y Offset ) function moves her by those amount s , in those directions . 
+// Finally, x Location () and y Location () return how far Claire is from home, in X and Y directions respectively. 
+// After the calls of reset() , move By (1,-2) , and move By ( 3,1) , subsequently calling x Location () a nd y Location () should return 4 and -1 . Second: create distFromHome () . Assuming she moves diagonally, return her distance from home.
+
+const claire = {
+  home: {
+    x: 0,
+    y: 0
+  },
+  location: {
+    x: 0,
+    y: 0
+  }
+}
+
+claire.reset = function () {
+  this.location = this.home;
+}
+
+claire.moveBy = function (xOffset, yOffset) {
+  this.location.x += xOffset;
+  this.location.y += yOffset;
+}
+
+claire.xLocation = function () {
+  return this.location.x;
+}
+
+claire.yLocation = function () {
+  return this.location.y;
+}
+
+claire.distFromHome = function () {
+  let xDist = Math.abs(this.location.x);
+  let yDist = Math.abs(this.location.y);
+
+  return Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2));
+}
+
+claire.moveBy(1, -2);
+claire.moveBy(3, 1);
+claire.moveBy(55, 23)
+claire.moveBy(-22, -33)
+console.log(claire.location);
+console.log(claire.distFromHome());
